@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
+
 import bannerImage from '~/app/assets/home/banner_image.jpg'
 import GuildPartnerImage from '~/app/assets/home/Guild-Emblem-Transparent.png'
 import CheckATradePartnerImage from '~/app/assets/home/checkatrade-com-strapline-1-1024x486.png'
@@ -15,7 +16,7 @@ const colors = {
 };
 
 const Container = styled.div`
-  font-family: "Andale Mono";
+  // font-family: "Andale Mono";
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; /* Align items with space-between */
@@ -24,31 +25,6 @@ const Container = styled.div`
   padding-top: 85px;
 
 `;
-
-// const Main = styled.main`
-//   width: 100%;
-// `;
-
-
-
-// const FullWidthImage = styled(Image)`
-//   height: 400px; /* Maintain aspect ratio */
-//   object-fit: cover; /* Crop the image to cover the specified width and height */
-//   background-size: cover; /* Crop the image to cover the container */
-
-// `;
-
-// const BackgroundImage = styled.div`
-//   width: 100%;
-//   height: 400px; /* Set the desired height */
-//   background-image: url(${logo.src});
-//   background-position: center; /* Center the image */
-//   background-size: cover; /* Crop the image to cover the container */
-//   `;
-
-// const Image = styled.img`
-//   height: 50px; /* Adjust height as needed */
-// `
 
 const GetStarted = styled.button`
   background-color: ${colors.accent};
@@ -70,7 +46,6 @@ const GetStarted = styled.button`
   }
 `;
 
-
 const SearchInput = styled.input`
   padding: 0.5rem 1rem;
   margin-top: 1rem;
@@ -90,8 +65,6 @@ const SearchInput = styled.input`
 }
 `;
 
-
-
 const Main = styled.main`
   width: 100%;
   position: relative; /* Add position relative */
@@ -106,7 +79,7 @@ const BackgroundImage = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 500px; /* Set the desired height */
+  height: 30rem; /* Set the desired height */
   background-image: url(${bannerImage.src}); /* Use logo.src directly */
   background-size: cover; /* Crop the image to cover the container */
   background-position: center; /* Center the image */
@@ -124,9 +97,9 @@ const TextOverlay = styled.div`
   // transform: translate(-50%, -50%); /* Center the element */
   text-align: left; /* Center align the text */
   color: white; /* Text color */
-  font-size: calc(1em + 1vw); /* Font size */
+  font-size: 2rem; /* Font size */
   max-width: 50%;
-  max-height: 400px;
+  max-height: 23rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -138,14 +111,14 @@ const TextOverlay = styled.div`
 `;
 
 const TextParagraph = styled.p`
-  font-size: calc(0.5em + 1vw); /* Set text size to 1.5rem */
+  font-size: 1.2rem; /* Set text size to 1.5rem */
 `;
 
 const Rhs = styled.div`
   position: relative; /* Position absolutely within the Container */
   top: 0;
   right: 0;
-  height: 400px; /* Set the desired height */
+  height: 25rem; /* Set the desired height */
   z-index: 2; /* Ensure the BackgroundImage is behind the Main component */
   display: flex; /* Use flexbox for layout */
   flex-direction: column;
@@ -160,30 +133,23 @@ const PartnerLogos = styled.div`
 `;
 
 const MainP = () => {
-  const handleClick = () => {
-    // Handle button click
-  };
-
   return (
     <Container>
-            <BackgroundImage />
-
+      <BackgroundImage />
       <Main>
-      <TextOverlay>
+        <TextOverlay>
           <h2>Streamline your Building Regs Specifications
-with our Premium service</h2>
+            with our Premium service</h2>
           <TextParagraph>Register Now for our Library of 1500+ Building Regs Specifications & 900+ Detail Drawings for Extensions, Loft Conversions, Flat Conversions, New Builds, Garage Conversions, Garage Builds, New Build Flats & Basement Conversions</TextParagraph>
-          <GetStarted>Get Started</GetStarted> 
+          <GetStarted>Get Started</GetStarted>
         </TextOverlay>
         <Rhs>
-        <SearchInput placeholder='Search...'></SearchInput>
-        <PartnerLogos>
-        <Image src={GuildPartnerImage} alt="Logo" width={150}/>
-        <Image src={CheckATradePartnerImage} alt="Logo" width={300} layout="fixed"/>
-        </PartnerLogos>
+          <SearchInput placeholder='Search...'></SearchInput>
+          <PartnerLogos>
+            <Image src={GuildPartnerImage} alt="Logo" width={150} />
+            <Image src={CheckATradePartnerImage} alt="Logo" width={300} layout="fixed" />
+          </PartnerLogos>
         </Rhs>
- 
-        {/* <Button onClick={handleClick}>Click Me</Button> */}
       </Main>
     </Container>
   );

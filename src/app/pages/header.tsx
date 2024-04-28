@@ -14,7 +14,7 @@ const colors = {
 };
 
 const Container = styled.div`
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   width: 100%; /* Ensure full width */
   background-color: ${colors.primary}; /* Apply background color */
   z-index: 3;
@@ -35,7 +35,9 @@ const Header = styled.header`
 `;
 
 const NavOptions = styled.nav`
-  display: flex;
+display: flex;
+justify-content: flex-start; /* Distribute items evenly along the main axis */
+flex-grow: 1; /* Allow the navigation options to take up available space */
 `;
 
 const NavOption = styled.a`
@@ -53,6 +55,7 @@ const AuthSection = styled.div`
   display: flex;
   align-items: center;
   align: right;
+  max-width: 20%;
 `;
 
 const AuthButton = styled.button`
@@ -94,6 +97,7 @@ const AuthButton2 = styled.button`
 
 const LogoContainer = styled.div`
   padding-left: 15px;
+  max-width: 20%;
 `
 
 const HeaderP = () => {
@@ -101,8 +105,7 @@ const HeaderP = () => {
     <Container>
       <Header>
         <LogoContainer>
-        <Image src={logo} alt="Logo" width={300}/>
-
+          <Image src={logo} alt="Logo" width={300} />
         </LogoContainer>
         <NavOptions>
           <NavOption href="#">Home</NavOption>
@@ -115,13 +118,13 @@ const HeaderP = () => {
           <NavOption href="#">Building regs</NavOption>
           <NavOption href="#">Blog</NavOption>
           <NavOption href="#">Contacts</NavOption>
-        </NavOptions>   
+        </NavOptions>
         <AuthSection>
           <AuthButton>Login</AuthButton>
           <AuthButton2>Register</AuthButton2>
-        </AuthSection>     
-        
-        </Header>
+        </AuthSection>
+
+      </Header>
     </Container>
   );
 };
