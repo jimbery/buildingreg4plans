@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
+
 import bannerImage from '~/app/assets/home/banner_image.jpg'
 import GuildPartnerImage from '~/app/assets/home/Guild-Emblem-Transparent.png'
 import CheckATradePartnerImage from '~/app/assets/home/checkatrade-com-strapline-1-1024x486.png'
@@ -15,7 +16,7 @@ const colors = {
 };
 
 const Container = styled.div`
-  font-family: "Andale Mono";
+  // font-family: "Andale Mono";
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; /* Align items with space-between */
@@ -79,7 +80,11 @@ const BackgroundImage = styled.div`
   top: 0;
   left: 0;
   width: 100%;
+<<<<<<< HEAD
   height: 500px; /* Default height */
+=======
+  height: 30rem; /* Set the desired height */
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
   background-image: url(${bannerImage.src}); /* Use logo.src directly */
   background-size: cover; /* Crop the image to cover the container */
   background-position: center; /* Center the image */
@@ -100,10 +105,14 @@ const TextOverlay = styled.div`
   left: 2.5%; /* Position in the middle horizontally */
   text-align: left; /* Center align the text */
   color: white; /* Text color */
+<<<<<<< HEAD
   font-size: calc(1em + 1vw); /* Font size */
   font-weight: bold;
+=======
+  font-size: 2rem; /* Font size */
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
   max-width: 50%;
-  max-height: 400px;
+  max-height: 23rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -112,15 +121,19 @@ const TextOverlay = styled.div`
 `;
 
 const TextParagraph = styled.p`
+<<<<<<< HEAD
   font-size: calc(0.25em + 1vw); /* Set text size to 1.5rem */
   font-weight: normal;
+=======
+  font-size: 1.2rem; /* Set text size to 1.5rem */
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
 `;
 
 const Rhs = styled.div`
   position: relative; /* Position absolutely within the Container */
   top: 0;
   right: 0;
-  height: 400px; /* Set the desired height */
+  height: 25rem; /* Set the desired height */
   z-index: 2; /* Ensure the BackgroundImage is behind the Main component */
   display: flex; /* Use flexbox for layout */
   flex-direction: column;
@@ -135,24 +148,30 @@ const PartnerLogos = styled.div`
 `;
 
 const MainP = () => {
-  const handleClick = () => {
-    // Handle button click
-  };
-
   return (
     <Container>
       <BackgroundImage />
       <Main>
         <TextOverlay>
+<<<<<<< HEAD
           <h2>Streamline your Building Regs Specifications with our Premium service</h2>
+=======
+          <h2>Streamline your Building Regs Specifications
+            with our Premium service</h2>
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
           <TextParagraph>Register Now for our Library of 1500+ Building Regs Specifications & 900+ Detail Drawings for Extensions, Loft Conversions, Flat Conversions, New Builds, Garage Conversions, Garage Builds, New Build Flats & Basement Conversions</TextParagraph>
-          <GetStarted>Get Started</GetStarted> 
+          <GetStarted>Get Started</GetStarted>
         </TextOverlay>
         <Rhs>
           <SearchInput placeholder='Search...'></SearchInput>
           <PartnerLogos>
+<<<<<<< HEAD
             <Image src={GuildPartnerImage} alt="Logo" width={150}/>
             <Image src={CheckATradePartnerImage} alt="Logo" width={300} layout="fixed"/>
+=======
+            <Image src={GuildPartnerImage} alt="Logo" width={150} />
+            <Image src={CheckATradePartnerImage} alt="Logo" width={300} layout="fixed" />
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
           </PartnerLogos>
         </Rhs>
       </Main>

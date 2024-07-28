@@ -9,17 +9,26 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
+<<<<<<< HEAD
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out --nojekyll --cname https://jimbery.github.io/buildingreg4plans/.com",
     "postdeploy": "echo 'Deployment complete!'",
     "static": "next build && next export && touch ./out/.nojekyll && echo 'https://jimbery.github.io/buildingreg4plans/' > ./out/CNAME`"
+=======
+    "deploy": "gh-pages -d out",
+    "postdeploy": "echo 'Deployment complete!'"
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
   },
   "dependencies": {
     "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
+<<<<<<< HEAD
     "react-icons": "^5.2.1",
     "sharp": "^0.33.4",
+=======
+    "sharp": "^0.33.3",
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
     "styled-components": "^6.1.8"
   },
   "devDependencies": {

@@ -16,7 +16,7 @@ const colors = {
 };
 
 const Container = styled.div`
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   width: 100%; /* Ensure full width */
   background-color: ${colors.primary}; /* Apply background color */
   z-index: 3;
@@ -35,6 +35,7 @@ const Header = styled.header`
   width: 100%;
 `;
 
+<<<<<<< HEAD
 interface NavOptionsProps {
   open: boolean;
 }
@@ -54,6 +55,12 @@ const NavOptions = styled.nav<NavOptionsProps>`
     z-index: 1000; /* Ensure it is above other content */
     overflow-y: auto; /* Add scroll if content overflows */
   }
+=======
+const NavOptions = styled.nav`
+display: flex;
+justify-content: flex-start; /* Distribute items evenly along the main axis */
+flex-grow: 1; /* Allow the navigation options to take up available space */
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
 `;
 
 const NavOption = styled.a`
@@ -75,12 +82,17 @@ const NavOption = styled.a`
 const AuthSection = styled.div`
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   margin-left: auto;
 
   @media (max-width: 768px) {
     justify-content: flex-end;
     width: 100%;
   }
+=======
+  align: right;
+  max-width: 20%;
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
 `;
 
 const AuthButton = styled.button`
@@ -131,6 +143,7 @@ const AuthButton2 = styled.button`
 
 const LogoContainer = styled.div`
   padding-left: 15px;
+<<<<<<< HEAD
   display: flex;
   align-items: center;
 `;
@@ -161,6 +174,10 @@ const Hamburger = styled.div`
     padding-right: 20px;
   }
 `;
+=======
+  max-width: 20%;
+`
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
 
 const HeaderP = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -173,8 +190,12 @@ const HeaderP = () => {
     <Container>
       <Header>
         <LogoContainer>
+<<<<<<< HEAD
           <LogoLarge src={logo} alt="Logo" width={300} />
           <LogoSmall src={logoSmall} alt="LogoSmall" width={60} />
+=======
+          <Image src={logo} alt="Logo" width={300} />
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
         </LogoContainer>
         <Hamburger onClick={toggleMenu}>
           {menuOpen ? <FaTimes /> : <FaBars />}
@@ -195,6 +216,10 @@ const HeaderP = () => {
           <AuthButton>Login</AuthButton>
           <AuthButton2>Register</AuthButton2>
         </AuthSection>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 34fd1566dceffda78e85c75b2206105bfd05fdc2
       </Header>
     </Container>
   );

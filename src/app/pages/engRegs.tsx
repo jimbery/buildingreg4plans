@@ -5,11 +5,11 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 import HouseTechnicalDraw from '~/app/assets/home/house-technical-draw-20382137.webp';
-import GarageTechnicalDraw from  '~/app/assets/home/Detached-Garage-Plans-2.png';
+import GarageTechnicalDraw from '~/app/assets/home/Detached-Garage-Plans-2.png';
 import LoftTechnicalDraw from '~/app/assets/home/loft-draw.png';
 
 const Container = styled.div`
-  font-family: Roboto, sans-serif;
+  // font-family: Roboto, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,10 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px; /* Add padding for better spacing */
+  // max-height: 70rem;
+  flex-grow: 1; /* Allow the navigation options to take up available space */
+
+  // padding-top: 10px; /* Add padding for better spacing */
 `;
 
 const SectionTitle = styled.div`
@@ -35,24 +38,33 @@ const SectionTitle = styled.div`
 
 const SectionDiv = styled.div`
   display: flex;
-  justify-content: space-around;
-  width: 100%;
-  margin-bottom: 50px; /* Add margin for better spacing */
+  justify-content: space-between;
+  width: 90%;
+  // margin: 1.5rempx; /* Add margin for better spacing */
+  flex-wrap: wrap; /* Allow flex items to wrap onto multiple lines */
+  // flex-grow: 1; /* Allow the navigation options to take up available space */
+  align-items: center;
+  // padding: 5rem;
+
 `;
 
 const TileDiv = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center items horizontally */
-  justify-content: space-between; /* Center items vertically */
+  align-items: center;
+  justify-content: space-around;
   text-align: center;
-  width: 300px;
-  height: 300px;
-  padding: 20px;
+  width: 20rem; /* Set minimum width for each tile */
+  height: 20rem; /* Set minimum width for each tile */
+  margin-bottom: 1rem; /* Add margin for spacing between tiles */
+ 
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  // flex-grow: 1; /* Allow tiles to grow to fill available space */
 `;
+
 
 const TileImage = styled(Image)`
   border-radius: 8px;
@@ -67,22 +79,22 @@ const TileTitle = styled.p`
 
 const HyperlinkContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 `;
 
 const Hyperlink = styled.button`
-color: black; /* Secondary color */
-border: 2px solid black; /* Secondary color */
-padding: 10px 20px;
-border-radius: 5px;
-cursor: pointer;
-transition: color 0.3s ease, border-color 0.3s ease;
+  color: black; /* Secondary color */
+  border: 2px solid black; /* Secondary color */
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
 
-&:hover {
-  color: #FFD166; /* Lighter shade of secondary color */
-  border-color: #FFD166; /* Lighter shade of secondary color */
-}
+  &:hover {
+    color: #FFD166; /* Lighter shade of secondary color */
+    border-color: #FFD166; /* Lighter shade of secondary color */
+  }
 `;
 
 const EngRegs = () => {
@@ -110,6 +122,30 @@ const EngRegs = () => {
           <TileDiv>
             <TileTitle>Garage Conversion</TileTitle>
             <TileImage src={GarageTechnicalDraw} alt="Garage Conversion" width={200} height={150} />
+            <HyperlinkContainer>
+              <Hyperlink>England</Hyperlink>
+              <Hyperlink>Wales</Hyperlink>
+            </HyperlinkContainer>
+          </TileDiv>
+          <TileDiv>
+            <TileTitle>New Build</TileTitle>
+            <TileImage src={GarageTechnicalDraw} alt="New Build" width={200} height={150} />
+            <HyperlinkContainer>
+              <Hyperlink>England</Hyperlink>
+              <Hyperlink>Wales</Hyperlink>
+            </HyperlinkContainer>
+          </TileDiv>
+          <TileDiv>
+            <TileTitle>Flat Conversion</TileTitle>
+            <TileImage src={GarageTechnicalDraw} alt="Flat Conversion" width={200} height={150} />
+            <HyperlinkContainer>
+              <Hyperlink>England</Hyperlink>
+              <Hyperlink>Wales</Hyperlink>
+            </HyperlinkContainer>
+          </TileDiv>
+          <TileDiv>
+            <TileTitle>New Build Flats</TileTitle>
+            <TileImage src={GarageTechnicalDraw} alt="New Build Flats" width={200} height={150} />
             <HyperlinkContainer>
               <Hyperlink>England</Hyperlink>
               <Hyperlink>Wales</Hyperlink>
