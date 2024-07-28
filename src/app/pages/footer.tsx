@@ -2,9 +2,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-// import Image from 'next/image';
-
-// import logo from './LOGO.bmp'
 
 // Define the color palette
 const colors = {
@@ -13,14 +10,18 @@ const colors = {
   accent: '#3A476A', // Blue / grey
 };
 
-const Container = styled.div`
-  font-family: Arial, sans-serif;
+const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  // position: absolute;
   bottom: 0;
-  width: 100%
+  `;
+
+const Content = styled.div`
+  flex: 1; /* Take up the remaining space */
+`;
+
+const FooterContainer = styled.div`
+  width: 100%;
 `;
 
 const Footer = styled.footer`
@@ -28,16 +29,20 @@ const Footer = styled.footer`
   padding: 1rem 0;
   width: 100%;
   text-align: center;
-  z-index: 1; /* Ensure the Main component is above the BackgroundImage */
 `;
 
 const FooterP = () => {
   return (
-    <Container>
-      <Footer>
-        <p>&copy; 2024 BuildingRegs4Plans</p>
-      </Footer>
-    </Container>
+    <PageContainer>
+      <Content>
+        {/* Your main content goes here */}
+      </Content>
+      <FooterContainer>
+        <Footer>
+          <p>&copy; 2024 BuildingRegs4Plans</p>
+        </Footer>
+      </FooterContainer>
+    </PageContainer>
   );
 };
 

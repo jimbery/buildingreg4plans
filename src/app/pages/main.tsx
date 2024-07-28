@@ -22,33 +22,7 @@ const Container = styled.div`
   align-items: center;
   position: relative; /* Add position relative */
   padding-top: 85px;
-
 `;
-
-// const Main = styled.main`
-//   width: 100%;
-// `;
-
-
-
-// const FullWidthImage = styled(Image)`
-//   height: 400px; /* Maintain aspect ratio */
-//   object-fit: cover; /* Crop the image to cover the specified width and height */
-//   background-size: cover; /* Crop the image to cover the container */
-
-// `;
-
-// const BackgroundImage = styled.div`
-//   width: 100%;
-//   height: 400px; /* Set the desired height */
-//   background-image: url(${logo.src});
-//   background-position: center; /* Center the image */
-//   background-size: cover; /* Crop the image to cover the container */
-//   `;
-
-// const Image = styled.img`
-//   height: 50px; /* Adjust height as needed */
-// `
 
 const GetStarted = styled.button`
   background-color: ${colors.accent};
@@ -70,7 +44,6 @@ const GetStarted = styled.button`
   }
 `;
 
-
 const SearchInput = styled.input`
   padding: 0.5rem 1rem;
   margin-top: 1rem;
@@ -87,10 +60,8 @@ const SearchInput = styled.input`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
   &::placeholder {
     color: white;
-}
+  }
 `;
-
-
 
 const Main = styled.main`
   width: 100%;
@@ -99,6 +70,8 @@ const Main = styled.main`
   display: flex; /* Use flexbox for layout */
   flex-direction: row;
   justify-content: space-between;
+
+
 `;
 
 const BackgroundImage = styled.div`
@@ -106,7 +79,7 @@ const BackgroundImage = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 500px; /* Set the desired height */
+  height: 500px; /* Default height */
   background-image: url(${bannerImage.src}); /* Use logo.src directly */
   background-size: cover; /* Crop the image to cover the container */
   background-position: center; /* Center the image */
@@ -115,30 +88,32 @@ const BackgroundImage = styled.div`
   align-items: center; /* Center vertically */
   justify-content: space-evenly; /* Align items with space-between */
   filter: grayscale(60%);
+
+  @media (min-width: 1800px) {
+    height: 525px; /* Increase height for screens 1800px and wider */
+  }
 `;
 
 const TextOverlay = styled.div`
   position: relative;
   top: 50%; /* Position in the middle vertically */
   left: 2.5%; /* Position in the middle horizontally */
-  // transform: translate(-50%, -50%); /* Center the element */
   text-align: left; /* Center align the text */
   color: white; /* Text color */
   font-size: calc(1em + 1vw); /* Font size */
+  font-weight: bold;
   max-width: 50%;
   max-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // overflow: hidden;
-  // font-weight: bold; /* Font weight */
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
   z-index: 2; /* Ensure the text is above the background image */
-  // overflow: hidden; /* Hide overflow to ensure text stays within container */
 `;
 
 const TextParagraph = styled.p`
-  font-size: calc(0.5em + 1vw); /* Set text size to 1.5rem */
+  font-size: calc(0.25em + 1vw); /* Set text size to 1.5rem */
+  font-weight: normal;
 `;
 
 const Rhs = styled.div`
@@ -166,24 +141,20 @@ const MainP = () => {
 
   return (
     <Container>
-            <BackgroundImage />
-
+      <BackgroundImage />
       <Main>
-      <TextOverlay>
-          <h2>Streamline your Building Regs Specifications
-with our Premium service</h2>
+        <TextOverlay>
+          <h2>Streamline your Building Regs Specifications with our Premium service</h2>
           <TextParagraph>Register Now for our Library of 1500+ Building Regs Specifications & 900+ Detail Drawings for Extensions, Loft Conversions, Flat Conversions, New Builds, Garage Conversions, Garage Builds, New Build Flats & Basement Conversions</TextParagraph>
           <GetStarted>Get Started</GetStarted> 
         </TextOverlay>
         <Rhs>
-        <SearchInput placeholder='Search...'></SearchInput>
-        <PartnerLogos>
-        <Image src={GuildPartnerImage} alt="Logo" width={150}/>
-        <Image src={CheckATradePartnerImage} alt="Logo" width={300} layout="fixed"/>
-        </PartnerLogos>
+          <SearchInput placeholder='Search...'></SearchInput>
+          <PartnerLogos>
+            <Image src={GuildPartnerImage} alt="Logo" width={150}/>
+            <Image src={CheckATradePartnerImage} alt="Logo" width={300} layout="fixed"/>
+          </PartnerLogos>
         </Rhs>
- 
-        {/* <Button onClick={handleClick}>Click Me</Button> */}
       </Main>
     </Container>
   );

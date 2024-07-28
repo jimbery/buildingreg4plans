@@ -1,10 +1,12 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
-import logo from '~/app/assets/common/LOGO.bmp'
+import logo from '~/app/assets/common/LOGO.bmp';
+import logoSmall from '~/app/assets/common/LOGO-SMALL.bmp';
 
 // Define the color palette
 const colors = {
@@ -20,7 +22,6 @@ const Container = styled.div`
   z-index: 3;
   position: fixed;
   overflow: hidden;
-  // background-color: #333;
   top: 0;
 `;
 
@@ -31,11 +32,28 @@ const Header = styled.header`
   color: #fff;
   padding: 1rem 0;
   top: 0;
-  // position: fixed;
+  width: 100%;
 `;
 
-const NavOptions = styled.nav`
+interface NavOptionsProps {
+  open: boolean;
+}
+
+const NavOptions = styled.nav<NavOptionsProps>`
   display: flex;
+
+  @media (max-width: 1000px) {
+    display: ${props => (props.open ? 'block' : 'none')};
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: ${colors.primary};
+    width: 200px;
+    height: 370px; /* Full viewport height */
+    padding: 1rem;
+    z-index: 1000; /* Ensure it is above other content */
+    overflow-y: auto; /* Add scroll if content overflows */
+  }
 `;
 
 const NavOption = styled.a`
@@ -47,12 +65,22 @@ const NavOption = styled.a`
   &:hover {
     color: #f0f0f0; /* Lighter shade of text color */
   }
+
+  @media (max-width: 1000px) {
+    display: block;
+    margin: 10px 0;
+  }
 `;
 
 const AuthSection = styled.div`
   display: flex;
   align-items: center;
-  align: right;
+  margin-left: auto;
+
+  @media (max-width: 768px) {
+    justify-content: flex-end;
+    width: 100%;
+  }
 `;
 
 const AuthButton = styled.button`
@@ -66,13 +94,17 @@ const AuthButton = styled.button`
   cursor: pointer;
   transition-property: background-color;
   font-size: 0.8rem;
+  max-width: 10rem;
 
   &:hover {
     background-color: #fff; /* Change background color on hover */
     color: ${colors.primary}; /* Change text color on hover */
   }
-`;
 
+  @media (max-width: 768px) {
+    margin-left: 5px;
+  }
+`;
 
 const AuthButton2 = styled.button`
   background-color: #0000;
@@ -85,28 +117,71 @@ const AuthButton2 = styled.button`
   cursor: pointer;
   transition-property: background-color;
   font-size: 0.8rem;
+  max-width: 10rem;
 
   &:hover {
     background-color: ${colors.secondary}; /* Change background color on hover */
     color: ${colors.primary}; /* Change text color on hover */
   }
+
+  @media (max-width: 768px) {
+    margin-left: 5px;
+  }
 `;
 
 const LogoContainer = styled.div`
   padding-left: 15px;
-`
+  display: flex;
+  align-items: center;
+`;
+
+const LogoLarge = styled(Image)`
+  display: none;
+
+  @media (min-width: 1200px) {
+    display: block;
+  }
+`;
+
+const LogoSmall = styled(Image)`
+  display: block;
+
+  @media (min-width: 1200px) {
+    display: none;
+  }
+`;
+
+const Hamburger = styled.div`
+  display: none;
+
+  @media (max-width: 1000px) {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding-right: 20px;
+  }
+`;
 
 const HeaderP = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <Container>
       <Header>
         <LogoContainer>
-        <Image src={logo} alt="Logo" width={300}/>
-
+          <LogoLarge src={logo} alt="Logo" width={300} />
+          <LogoSmall src={logoSmall} alt="LogoSmall" width={60} />
         </LogoContainer>
-        <NavOptions>
+        <Hamburger onClick={toggleMenu}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </Hamburger>
+        <NavOptions open={menuOpen}>
           <NavOption href="#">Home</NavOption>
-          <NavOption href="#">Specificiation</NavOption>
+          <NavOption href="#">Specification</NavOption>
           <NavOption href="#">Detail drawings</NavOption>
           <NavOption href="#">Mobile app</NavOption>
           <NavOption href="#">3D details</NavOption>
@@ -115,13 +190,12 @@ const HeaderP = () => {
           <NavOption href="#">Building regs</NavOption>
           <NavOption href="#">Blog</NavOption>
           <NavOption href="#">Contacts</NavOption>
-        </NavOptions>   
+        </NavOptions>
         <AuthSection>
           <AuthButton>Login</AuthButton>
           <AuthButton2>Register</AuthButton2>
-        </AuthSection>     
-        
-        </Header>
+        </AuthSection>
+      </Header>
     </Container>
   );
 };
