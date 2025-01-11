@@ -4,7 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import logo from '~/app/assets/common/LOGO.bmp'
+import logo from '../assets/common/LOGO.bmp'
 
 // Define the color palette
 const colors = {

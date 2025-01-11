@@ -4,9 +4,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import HouseTechnicalDraw from '~/app/assets/home/house-technical-draw-20382137.webp';
-import GarageTechnicalDraw from '~/app/assets/home/Detached-Garage-Plans-2.png';
-import LoftTechnicalDraw from '~/app/assets/home/loft-draw.png';
+import HouseTechnicalDraw from '../assets/home/house-technical-draw-20382137.webp';
+import GarageTechnicalDraw from '../assets/home/Detached-Garage-Plans-2.png';
+import LoftTechnicalDraw from '../assets/home/loft-draw.png';
 
 const Container = styled.div`
   // font-family: Roboto, sans-serif;

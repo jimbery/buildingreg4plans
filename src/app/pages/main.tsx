@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import Image from 'next/image';
 
 
-import bannerImage from '~/app/assets/home/banner_image.jpg'
-import GuildPartnerImage from '~/app/assets/home/Guild-Emblem-Transparent.png'
-import CheckATradePartnerImage from '~/app/assets/home/checkatrade-com-strapline-1-1024x486.png'
+import bannerImage from '../assets/home/banner_image.jpg'
+import GuildPartnerImage from '../assets/home/Guild-Emblem-Transparent.png'
+import CheckATradePartnerImage from '../assets/home/checkatrade-com-strapline-1-1024x486.png'
 
 const colors = {
   primary: '#283149', // Dark blue
